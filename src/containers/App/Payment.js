@@ -7,7 +7,6 @@ import RNIap, {
   finishTransaction,
 } from 'react-native-iap';
 import dataBuys from './data/buys';
-import dataSubs from './data/subs';
 import { incrementTurn } from './actions';
 import Button from './Button';
 import { paymentStyle } from './style';
@@ -18,7 +17,6 @@ const purchaseErrorSubscription = null;
 function Payment() {
   const dispatch = useDispatch();
   const [buys, setBuys] = useState([]);
-  const [subs, setSubs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const initialIAP = useCallback(async () => {
@@ -40,9 +38,7 @@ function Payment() {
       });
 
       const ps = await RNIap.getProducts(dataBuys.map(item => item.sku));
-      const s = await RNIap.getSubscriptions(dataSubs.map(item => item.sku));
       setBuys(ps);
-      setSubs(s);
     } catch (err) {
       Alert.alert(err.message);
       // console.warn(err.code, err.message);
@@ -77,12 +73,6 @@ function Payment() {
       case dataBuys[3].sku:
         dispatch(incrementTurn(dataBuys[3].value));
         break;
-      case dataSubs[0].sku:
-        dispatch(incrementTurn(dataSubs[0].value));
-        break;
-      case dataSubs[1].sku:
-        dispatch(incrementTurn(dataSubs[1].value));
-        break;
       default:
         break;
     }
@@ -102,16 +92,13 @@ function Payment() {
     </View>
   ) : (
     <>
-      {dataBuys.map((buy, buyKey) => (
+      {buys.map((buy, buyKey) => (
         <Button
           type="TURN"
           key={buyKey}
           item={buy}
           onClick={handleRequestBuy}
         />
-      ))}
-      {dataSubs.map((sub, subKey) => (
-        <Button type="SUB" key={subKey} item={sub} onClick={handleRequestSub} />
       ))}
     </>
   );

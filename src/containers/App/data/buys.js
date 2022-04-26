@@ -1,18 +1,18 @@
 const buys = [
   {
-    sku: 'a1_t_100',
+    sku: 'flipfourbothard_t_50',
     value: 50,
   },
   {
-    sku: 'a1_t_200',
+    sku: 'flipfourbothard_t_100',
     value: 100,
   },
   {
-    sku: 'a1_t_300',
+    sku: 'flipfourbothard_t_150',
     value: 150,
   },
   {
-    sku: 'a1_t_400',
+    sku: 'flipfourbothard_t_200',
     value: 200,
   },
 ];

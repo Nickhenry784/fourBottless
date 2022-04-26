@@ -1,6 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { View, Image, TouchableOpacity, Alert, Animated } from 'react-native';
+import {
+  View,
+  Image,
+  TouchableOpacity,
+  Alert,
+  Animated,
+  FlatList,
+  Dimensions,
+} from 'react-native';
 import { images } from 'assets/images';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -10,6 +18,9 @@ import { randomIntFromInterval } from 'utils/number';
 import { makeSelectIsPlayState, makeSelectTurn } from './selectors';
 import { appStyle } from './style';
 import { decrementTurn } from './actions';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const listBottlesImage = [
   images.home.bottles1,
@@ -23,6 +34,7 @@ function HomePage({ dispatch, turn }) {
   const [play, setPlay] = useState(false);
   const [time, setTime] = useState(300);
   const resultValue = useRef(4);
+  const numCol = 2;
 
   useEffect(() => {
     const timeCountDown = 5;
@@ -80,9 +92,10 @@ function HomePage({ dispatch, turn }) {
       </View>
       <SizedBox vertical={10} />
       <View style={appStyle.bottlesView}>
-        <FlatGrid
+        <FlatList
           data={listBottlesImage}
-          spacing={10}
+          scrollEnabled={false}
+          numColumns={numCol}
           renderItem={({ item, index }) => (
             <View>
               {!play && (
@@ -98,9 +111,9 @@ function HomePage({ dispatch, turn }) {
               <Animated.View
                 style={[
                   {
-                    width: 140,
-                    height: 160,
-                    marginBottom: 20,
+                    width: windowWidth * 0.2,
+                    height: windowHeight * 0.2,
+                    margin: 10,
                     alignItems: 'center',
                     justifyContent: 'center',
                     transform: [

@@ -1,4 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 export const bottlesStyle = x =>
   StyleSheet.create({
@@ -7,7 +10,6 @@ export const bottlesStyle = x =>
     height: 160,
     marginBottom: 20,
     alignItems: 'center',
-    backgroundColor: 'red',
     justifyContent: 'center',
   });
 
@@ -41,6 +43,7 @@ export const appStyle = StyleSheet.create({
     color: 'black',
   },
   homeView: {
+    flex: 1,
     marginTop: 80,
     width: '100%',
     height: '100%',
@@ -50,7 +53,7 @@ export const appStyle = StyleSheet.create({
   },
   resultView: {
     width: '70%',
-    height: 100,
+    flex: 0.2,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -61,14 +64,14 @@ export const appStyle = StyleSheet.create({
   },
   bottlesView: {
     width: '100%',
-    height: 370,
+    flex: 0.7,
     alignItems: 'center',
     paddingLeft: 30,
     justifyContent: 'center',
   },
   bottlesImage: {
-    width: 100,
-    height: 170,
+    width: windowWidth * 0.2,
+    height: windowHeight * 0.2,
     resizeMode: 'contain',
   },
   stateResult: {
@@ -152,18 +155,18 @@ export const buttonStyle = StyleSheet.create({
     padding: 5,
   },
   buttonText: {
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'white',
     borderRadius: 2,
     marginBottom: 5,
     paddingVertical: 10,
     paddingHorizontal: 100,
-    borderWidth: 2,
-    borderColor: '#fff',
+    borderWidth: 3,
+    borderColor: 'black',
   },
   text: {
-    color: 'white',
+    color: 'black',
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
   },
   textSmall: {

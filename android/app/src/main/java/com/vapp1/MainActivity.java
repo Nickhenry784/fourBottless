@@ -1,4 +1,4 @@
-package com.minibtsimleappflip;
+package com.chazluettgen.flipfourbothard;
 
 import com.facebook.react.ReactActivity;
 
