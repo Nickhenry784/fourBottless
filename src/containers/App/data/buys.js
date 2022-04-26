@@ -1,19 +1,19 @@
 const buys = [
   {
-    sku: 'flipfourbothard_t_50',
-    value: 50,
-  },
-  {
-    sku: 'flipfourbothard_t_100',
+    sku: 'dartschallenge_t_100',
     value: 100,
   },
   {
-    sku: 'flipfourbothard_t_150',
-    value: 150,
+    sku: 'dartschallenge_t_200',
+    value: 200,
   },
   {
-    sku: 'flipfourbothard_t_200',
-    value: 200,
+    sku: 'dartschallenge_t_300',
+    value: 300,
+  },
+  {
+    sku: 'dartschallenge_t_400',
+    value: 400,
   },
 ];
 

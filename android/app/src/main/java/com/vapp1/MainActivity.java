@@ -1,4 +1,4 @@
-package com.chazluettgen.flipfourbothard;
+package com.freedwalsh.dartschallengeterapp;
 
 import com.facebook.react.ReactActivity;
 

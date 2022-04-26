@@ -1,0 +1,19 @@
+Name app: DartsChallengeWithFriend	
+Apkname: com.dartschallengeterapp
+
+khi bấm nút play thì các ô sẽ chạy trúng ô nào thực hiện thử thách ô đó:
+plank 2 minutes
+push-up 10
+push-up 20
+plank 5 minutes
+answer an question
+kiss the person next to you
+take pictures with strangersrun 5 around
+play 10 lần thì bắt mua
+
+
+View : 100,200,300,400
+Price: 0.99,1.99,4.99,9.99
+
+Sub:1000,3000
+Price: 10$/week, 20$/tháng

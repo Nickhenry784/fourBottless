@@ -1,132 +1,16 @@
-import { StyleSheet, Dimensions } from 'react-native';
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
-export const bottlesStyle = x =>
-  StyleSheet.create({
-    transfrom: { rotate: '10deg' },
-    width: 140,
-    height: 160,
-    marginBottom: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-  });
+import { StyleSheet } from 'react-native';
 
 export const appStyle = StyleSheet.create({
-  heartButton: {
-    width: 80,
-    height: 50,
+  turn: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold',
     position: 'absolute',
-    top: '2%',
+    top: '6%',
     left: '5%',
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  heartImage: {
-    width: 50,
-    height: 50,
-    resizeMode: 'contain',
-  },
-  turnText: {
-    fontFamily: 'LightBeach',
-    fontSize: 30,
-    color: 'red',
-  },
-  backText: {
-    position: 'absolute',
-    paddingTop: 20,
-    left: '5%',
-    fontFamily: 'LightBeach',
-    fontSize: 30,
-    color: 'black',
-  },
-  homeView: {
-    flex: 1,
-    marginTop: 80,
-    width: '100%',
-    height: '100%',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  resultView: {
-    width: '70%',
-    flex: 0.2,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  resultImage: {
-    width: 300,
-    height: 200,
-    resizeMode: 'contain',
-  },
-  bottlesView: {
-    width: '100%',
-    flex: 0.7,
-    alignItems: 'center',
-    paddingLeft: 30,
-    justifyContent: 'center',
-  },
-  bottlesImage: {
-    width: windowWidth * 0.2,
-    height: windowHeight * 0.2,
-    resizeMode: 'contain',
-  },
-  stateResult: {
-    width: 40,
-    height: 40,
-    resizeMode: 'contain',
-    position: 'absolute',
-    top: '0%',
-    right: '8%',
-    zIndex: 3,
-  },
-  playImage: {
-    width: 150,
-    height: 100,
-    resizeMode: 'contain',
-  },
-});
-
-export const musicsStyle = StyleSheet.create({
-  musicWrapper: {
-    position: 'absolute',
-    alignSelf: 'center',
-    bottom: '50%',
-  },
-  musicButton: {
-    padding: 10,
-    backgroundColor: 'gray',
-  },
-  musicButtonTitle: {
-    color: 'green',
-  },
-});
-
-export const layoutStyle = StyleSheet.create({
-  background: {
-    resizeMode: 'contain',
-    width: '100%',
-    height: '100%',
-  },
-  land: {
-    resizeMode: 'cover',
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    width: '100%',
-    height: '40%',
-  },
-  children: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    zIndex: 3,
-    elevation: 3,
+    textShadowColor: 'rgba(0, 0, 0, 0.4)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10,
   },
 });
 
@@ -142,36 +26,111 @@ export const buttonStyle = StyleSheet.create({
   buttons: {
     padding: 10,
     paddingTop: 30,
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     top: '10%',
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
     zIndex: 3,
     elevation: 3,
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
   },
   button: {
     color: 'white',
+    width: '45%',
     textAlign: 'center',
     padding: 5,
+    borderColor: 'black',
+    borderWidth: 2,
+    margin: 5,
+    borderRadius: 10,
   },
   buttonText: {
-    backgroundColor: 'white',
-    borderRadius: 2,
+    backgroundColor: `#fff`,
     marginBottom: 5,
     paddingVertical: 10,
-    paddingHorizontal: 100,
-    borderWidth: 3,
-    borderColor: 'black',
+    paddingHorizontal: 10,
   },
   text: {
-    color: 'black',
+    color: '#000',
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
   },
   textSmall: {
-    color: 'white',
+    color: '#000',
     textAlign: 'center',
-    fontSize: 14,
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});
+
+export const homeStyle = StyleSheet.create({
+  background: {
+    resizeMode: 'contain',
+    width: '100%',
+    height: '100%',
+  },
+  header: {
+    marginTop: 20,
+  },
+  title: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18,
+    textAlign: 'center',
+  },
+  listChoices: {
+    marginTop: 20,
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  turn: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  cart: {
+    width: 40,
+    height: 40,
+    resizeMode: 'contain',
+  },
+  choices: {
+    width: '33.333333%',
+    height: 60,
+    marginTop: 10,
+  },
+  backgroundChoices: {
+    resizeMode: 'cover',
+    height: '100%',
+    width: '100%',
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
+  contentChoices: {
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
+    width: '100%',
+    marginTop: 'auto',
+    marginBottom: 'auto',
+  },
+  buttonPlay: {
+    width: 160,
+    height: 80,
+    resizeMode: 'contain',
+  },
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: 20,
+  },
+  back: {
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
   },
 });

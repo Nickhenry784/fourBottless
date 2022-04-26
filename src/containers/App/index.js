@@ -1,60 +1,57 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Text, View, TouchableOpacity, Image } from 'react-native';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import { useInjectReducer, useInjectSaga } from 'redux-injectors';
 import { images } from 'assets/images';
-import { makeSelectIsShowShopping, makeSelectTurn } from './selectors';
-import { appStyle } from './style';
-import saga from './saga';
-import reducer from './reducer';
-import Layout from './Layout';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import {
+  Image,
+  ImageBackground,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
+import { connect } from 'react-redux';
+import { useInjectReducer } from 'redux-injectors';
+import { createStructuredSelector } from 'reselect';
 import Buttons from './Buttons';
-import HomePage from './HomePage';
-import { setShowShopping } from './actions';
+import PlayRandom from './PlayRandom';
+import reducer from './reducer';
+import { makeSelectTurn } from './selectors';
+import { homeStyle } from './style';
 
 const key = 'App';
 
-function App({ dispatch, turn, isShowShopping }) {
-  useInjectSaga({ key, saga });
+function App({ turn }) {
   useInjectReducer({ key, reducer });
-
-  const onSetShowShopping = () => {
-    dispatch(setShowShopping(!isShowShopping));
+  const [isShowButtons, setShowButtons] = useState(false);
+  const onSetShowButtons = () => {
+    setShowButtons(!isShowButtons);
   };
-
   return (
-    <Layout turn={turn}>
-      {isShowShopping ? (
+    <ImageBackground
+      style={homeStyle.background}
+      source={images.home.background}>
+      <View
+        style={[
+          homeStyle.container,
+          { justifyContent: 'flex-end', alignItems: 'center', marginRight: 10 },
+        ]}>
+        <Text style={homeStyle.turn}>{turn}</Text>
         <TouchableOpacity
-          onPress={onSetShowShopping}
-          onLongPress={onSetShowShopping}>
-          <Text style={appStyle.backText}>Back</Text>
+          onPress={onSetShowButtons}
+          onLongPress={onSetShowButtons}>
+          <Image style={homeStyle.cart} source={images.home.cart} />
         </TouchableOpacity>
-      ) : (
-        <TouchableOpacity
-          onPress={onSetShowShopping}
-          onLongPress={onSetShowShopping}
-          style={appStyle.heartButton}>
-          <Image source={images.home.heart} style={appStyle.heartImage} />
-          <Text style={appStyle.turnText}>{turn}</Text>
-        </TouchableOpacity>
-      )}
-      {isShowShopping ? <Buttons /> : <HomePage />}
-    </Layout>
+      </View>
+      {isShowButtons ? <Buttons /> : <PlayRandom />}
+    </ImageBackground>
   );
 }
 
 App.propTypes = {
-  dispatch: PropTypes.func,
   turn: PropTypes.number,
-  isShowShopping: PropTypes.bool,
 };
 
 const mapStateToProps = createStructuredSelector({
   turn: makeSelectTurn(),
-  isShowShopping: makeSelectIsShowShopping(),
 });
 
 export default connect(mapStateToProps)(App);
