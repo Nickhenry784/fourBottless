@@ -9,7 +9,7 @@ const choices = [
 
   'RUN 5 AROUND',
 
-  'KISS THE PERSON NEXT TO YOU',
+  'ROTATE 5 AROUND',
 
   'SING A SONG',
 
