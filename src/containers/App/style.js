@@ -55,13 +55,13 @@ export const buttonStyle = StyleSheet.create({
   text: {
     color: '#000',
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
   },
   textSmall: {
     color: '#000',
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 14,
     fontWeight: 'bold',
   },
 });
@@ -72,65 +72,38 @@ export const homeStyle = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  header: {
-    marginTop: 20,
-  },
-  title: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 18,
-    textAlign: 'center',
-  },
-  listChoices: {
-    marginTop: 20,
+  home: {
     display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  turn: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 20,
-  },
-  cart: {
-    width: 40,
-    height: 40,
-    resizeMode: 'contain',
-  },
-  choices: {
-    width: '33.333333%',
-    height: 60,
-    marginTop: 10,
-  },
-  backgroundChoices: {
-    resizeMode: 'cover',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     height: '100%',
-    width: '100%',
-    borderRadius: 10,
-    overflow: 'hidden',
-  },
-  contentChoices: {
-    textAlign: 'center',
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 16,
-    width: '100%',
-    marginTop: 'auto',
-    marginBottom: 'auto',
-  },
-  buttonPlay: {
-    width: 160,
-    height: 80,
-    resizeMode: 'contain',
   },
   container: {
     display: 'flex',
     flexDirection: 'row',
-    marginTop: 20,
+    alignItems: 'center',
   },
-  back: {
-    width: 100,
-    height: 100,
+  buy: {
+    width: 40,
+    height: 40,
+    resizeMode: 'contain',
+  },
+  cart: {
+    justifyContent: 'flex-end',
+    marginTop: 10,
+    marginRight: 10,
+  },
+  turn: {
+    fontSize: 20,
+    color: 'red',
+  },
+  seasonGroup: {
+    justifyContent: 'space-around',
+    marginBottom: 20,
+  },
+  season: {
+    width: 60,
+    height: 60,
     resizeMode: 'contain',
   },
 });

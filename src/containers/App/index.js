@@ -1,4 +1,5 @@
 import { images } from 'assets/images';
+import { NavigationContainer } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import {
@@ -11,11 +12,17 @@ import {
 import { connect } from 'react-redux';
 import { useInjectReducer } from 'redux-injectors';
 import { createStructuredSelector } from 'reselect';
+import { createStackNavigator } from '@react-navigation/stack';
 import Buttons from './Buttons';
-import PlayRandom from './PlayRandom';
 import reducer from './reducer';
 import { makeSelectTurn } from './selectors';
 import { homeStyle } from './style';
+import Fall from './Fall';
+import Summer from './Summer';
+import Spring from './Spring';
+import Winter from './Winter';
+
+const Stack = createStackNavigator();
 
 const key = 'App';
 
@@ -26,23 +33,14 @@ function App({ turn }) {
     setShowButtons(!isShowButtons);
   };
   return (
-    <ImageBackground
-      style={homeStyle.background}
-      source={images.home.background}>
-      <View
-        style={[
-          homeStyle.container,
-          { justifyContent: 'flex-end', alignItems: 'center', marginRight: 10 },
-        ]}>
-        <Text style={homeStyle.turn}>{turn}</Text>
-        <TouchableOpacity
-          onPress={onSetShowButtons}
-          onLongPress={onSetShowButtons}>
-          <Image style={homeStyle.cart} source={images.home.cart} />
-        </TouchableOpacity>
-      </View>
-      {isShowButtons ? <Buttons /> : <PlayRandom />}
-    </ImageBackground>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Fall" component={Fall} />
+        <Stack.Screen name="Summer" component={Summer} />
+        <Stack.Screen name="Spring" component={Spring} />
+        <Stack.Screen name="Winter" component={Winter} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
