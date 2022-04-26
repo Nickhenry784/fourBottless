@@ -1,48 +1,39 @@
-import { images } from 'assets/images';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import {
-  Image,
-  ImageBackground,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
+import 'react-native-gesture-handler';
 import { connect } from 'react-redux';
 import { useInjectReducer } from 'redux-injectors';
 import { createStructuredSelector } from 'reselect';
-import Buttons from './Buttons';
-import PlayRandom from './PlayRandom';
+import notes from './data/notes.json';
+import Note from './Note';
+import NoteList from './NoteList';
 import reducer from './reducer';
 import { makeSelectTurn } from './selectors';
-import { homeStyle } from './style';
 
 const key = 'App';
 
 function App({ turn }) {
   useInjectReducer({ key, reducer });
+  const notelist = notes.notes;
   const [isShowButtons, setShowButtons] = useState(false);
+  const [isShowNote, setIsShowNote] = useState(false);
   const onSetShowButtons = () => {
     setShowButtons(!isShowButtons);
   };
+  const onViewNoteList = () => {
+    setIsShowNote(true);
+  };
+  const Stack = createStackNavigator();
   return (
-    <ImageBackground
-      style={homeStyle.background}
-      source={images.home.background}>
-      <View
-        style={[
-          homeStyle.container,
-          { justifyContent: 'flex-end', alignItems: 'center', marginRight: 10 },
-        ]}>
-        <Text style={homeStyle.turn}>{turn}</Text>
-        <TouchableOpacity
-          onPress={onSetShowButtons}
-          onLongPress={onSetShowButtons}>
-          <Image style={homeStyle.cart} source={images.home.cart} />
-        </TouchableOpacity>
-      </View>
-      {isShowButtons ? <Buttons /> : <PlayRandom />}
-    </ImageBackground>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="home" component={NoteList} />
+        <Stack.Screen name="notes" component={Note} />
+        {/* <NoteList /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

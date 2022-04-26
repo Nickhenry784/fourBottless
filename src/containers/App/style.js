@@ -55,13 +55,13 @@ export const buttonStyle = StyleSheet.create({
   text: {
     color: '#000',
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
   },
   textSmall: {
     color: '#000',
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 14,
     fontWeight: 'bold',
   },
 });
@@ -72,65 +72,172 @@ export const homeStyle = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  header: {
-    marginTop: 20,
+  headerImg: {
+    resizeMode: 'contain',
+    height: 90,
+    width: '100%',
+  },
+  container: {
+    marginBottom: 6,
+    justifyContent: 'space-between',
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  noteList: {
+    maxHeight: '50%',
+    margin: 10,
+  },
+  createNewNoteButton: {
+    width: '100%',
+    height: 70,
+    resizeMode: 'contain',
+  },
+  backgroundNote: {
+    width: '100%',
+    height: 80,
+    resizeMode: 'contain',
+    marginBottom: 10,
+  },
+  deleteButton: {
+    width: 60,
+    height: 60,
+    resizeMode: 'contain',
+  },
+  description: {
+    height: '100%',
+    paddingLeft: '12%',
+    paddingRight: '4%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
   title: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 24,
+    paddingTop: 2,
+  },
+  date: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 24,
+    paddingBottom: 2,
+  },
+  nameInput: {
+    color: 'white',
+    paddingLeft: 50,
+  },
+  dateNow: {
+    color: 'white',
+    fontSize: 16,
     textAlign: 'center',
   },
-  listChoices: {
-    marginTop: 20,
+  footer: {
+    height: 80,
+    width: '100%',
+  },
+});
+export const noteStyle = StyleSheet.create({
+  showAllButton: {
+    width: '100%',
+    height: 50,
+    marginLeft: 2,
+    resizeMode: 'contain',
+  },
+  underLine: {
+    width: '100%',
+    height: 70,
+    resizeMode: 'cover',
+    marginBottom: 20,
+    marginLeft: 6,
+  },
+  descriptions: {
+    height: 70,
+    paddingLeft: '12%',
+    paddingRight: '4%',
     display: 'flex',
     flexDirection: 'row',
-    flexWrap: 'wrap',
+    justifyContent: 'space-between',
   },
-  turn: {
+  description: {
+    height: 70,
+    paddingLeft: '12%',
+    paddingRight: '4%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+  noteList: {
+    maxHeight: '40%',
+    margin: 10,
+  },
+  btnDelete: {
+    color: 'red',
+    maxWidth: 50,
+  },
+  name: {
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 16,
+    paddingTop: 2,
+  },
+  add: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 24,
+    width: 20,
   },
-  cart: {
-    width: 40,
-    height: 40,
-    resizeMode: 'contain',
+  price: {
+    color: 'white',
+    textAlign: 'left',
+    fontSize: 16,
+    paddingTop: 2,
   },
-  choices: {
-    width: '33.333333%',
-    height: 60,
-    marginTop: 10,
-  },
-  backgroundChoices: {
-    resizeMode: 'cover',
-    height: '100%',
-    width: '100%',
-    borderRadius: 10,
-    overflow: 'hidden',
-  },
-  contentChoices: {
+  total: {
     textAlign: 'center',
     color: 'white',
-    fontWeight: 'bold',
-    fontSize: 16,
-    width: '100%',
-    marginTop: 'auto',
-    marginBottom: 'auto',
-  },
-  buttonPlay: {
-    width: 160,
-    height: 80,
-    resizeMode: 'contain',
+    fontSize: 24,
   },
   container: {
+    width: '100%',
+    justifyContent: 'space-between',
+    marginTop: 20,
     display: 'flex',
     flexDirection: 'row',
-    marginTop: 20,
+    paddingHorizontal: 12,
   },
-  back: {
-    width: 100,
-    height: 100,
+  underLineInput: {
+    width: '100%',
+    height: 80,
+    resizeMode: 'cover',
+  },
+  formInput: {
+    width: '80%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+  },
+  titleInput: {
+    height: 40,
+    borderWidth: 1,
+    width: '90%',
+    fontSize: 18,
+    color: 'white',
+    placeholderTextColor: 'white',
+  },
+  priceInput: {
+    height: 40,
+    borderWidth: 1,
+    width: '90%',
+    fontSize: 18,
+    color: 'white',
+    placeholderTextColor: 'white',
+  },
+  backButton: {
+    marginTop: '2%',
+    width: '100%',
+    height: 50,
+    marginLeft: 2,
     resizeMode: 'contain',
   },
 });

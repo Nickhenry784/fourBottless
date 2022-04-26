@@ -2,11 +2,16 @@
 export const images = {
   home: {
     banner: require('./home/banner.png'),
-    backroundButtonActive: require('./home/backgroundButtonActive.png'),
-    backgroundButtonNormal: require('./home/backgroundButtonNormal.png'),
-    buttonPlay: require('./home/buttonPlay.png'),
+    background1: require('./home/background1.png'),
+    background2: require('./home/background2.png'),
+    underLine: require('./home/underLine.png'),
+    quitButton: require('./home/quitButton.png'),
+    showAllButton: require('./home/showAllButton.png'),
+    tick: require('./home/tick.png'),
+    header: require('./home/header.png'),
+    createNewNoteButton: require('./home/createNewNoteButton.png'),
+    note: require('./home/note.png'),
     back: require('./home/back.png'),
-    background: require('./home/background.png'),
-    cart: require('./home/cart.png'),
+    deleteButton: require('./home/deleteButton.png'),
   },
 };
