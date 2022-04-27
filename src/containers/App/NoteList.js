@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import { connect, useDispatch } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { dateNow } from '../../ultis/date';
+import { dateNow } from 'utils/date';
 import { addNoteList, removeNoteList } from './actions';
 import { makeSelectNoteList, makeSelectTurn } from './selectors';
 import { homeStyle } from './style';
