@@ -11,6 +11,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  StatusBar,
 } from 'react-native';
 import { connect, useDispatch } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -18,6 +19,7 @@ import { dateNow } from 'utils/date';
 import { addNoteList, removeNoteList } from './actions';
 import { makeSelectNoteList, makeSelectTurn } from './selectors';
 import { homeStyle } from './style';
+
 // eslint-disable-next-line react/prop-types
 function NoteList({ turn, noteList }) {
   const navigation = useNavigation();
@@ -56,10 +58,13 @@ function NoteList({ turn, noteList }) {
     <ImageBackground
       style={homeStyle.background}
       source={images.home.background1}>
+      <StatusBar hidden />
       <Image style={homeStyle.headerImg} source={images.home.header} />
       <ScrollView style={homeStyle.noteList}>
         {noteList?.map((note, index) => (
-          <TouchableOpacity onPress={() => onViewNoteList(note, index)}>
+          <TouchableOpacity
+            key={index}
+            onPress={() => onViewNoteList(note, index)}>
             <ImageBackground
               key={index}
               style={homeStyle.backgroundNote}

@@ -6,7 +6,9 @@ import 'react-native-gesture-handler';
 import { connect } from 'react-redux';
 import { useInjectReducer } from 'redux-injectors';
 import { createStructuredSelector } from 'reselect';
+import Buttons from './Buttons';
 import notes from './data/notes.json';
+import HomeView from './HomeView';
 import Note from './Note';
 import NoteList from './NoteList';
 import reducer from './reducer';
@@ -29,8 +31,26 @@ function App({ turn }) {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="home" component={NoteList} />
-        <Stack.Screen name="notes" component={Note} />
+        <Stack.Screen
+          name="home"
+          component={HomeView}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="buy"
+          component={Buttons}
+          options={{ title: 'Buy Turn' }}
+        />
+        <Stack.Screen
+          name="notesList"
+          component={NoteList}
+          options={{ title: 'Notes List' }}
+        />
+        <Stack.Screen
+          name="notes"
+          component={Note}
+          options={{ title: 'Notes Detail' }}
+        />
         {/* <NoteList /> */}
       </Stack.Navigator>
     </NavigationContainer>

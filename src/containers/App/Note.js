@@ -12,6 +12,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  StatusBar,
 } from 'react-native';
 import { connect, useDispatch } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -111,7 +112,6 @@ function Note({ noteDetail, route, noteList, totalNoteListDetail }) {
             source={images.home.showAllButton}
           />
         </TouchableOpacity>
-
         <View>
           <Text style={noteStyle.total}>{total}</Text>
         </View>

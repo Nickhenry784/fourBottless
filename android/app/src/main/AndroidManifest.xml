@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.freedwalsh.dartschallengeterapp">
+  package="com.dominique.bestbutlereverhomedayapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

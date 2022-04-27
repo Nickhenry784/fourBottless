@@ -1,4 +1,4 @@
-package com.freedwalsh.dartschallengeterapp;
+package com.dominique.bestbutlereverhomedayapp;
 
 import com.facebook.react.ReactActivity;
 

@@ -1,4 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 export const appStyle = StyleSheet.create({
   turn: {
@@ -37,25 +40,20 @@ export const buttonStyle = StyleSheet.create({
     elevation: 3,
   },
   button: {
-    color: 'white',
+    backgroundColor: 'blue',
     width: '45%',
-    textAlign: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
     padding: 5,
     borderColor: 'black',
     borderWidth: 2,
     margin: 5,
     borderRadius: 10,
   },
-  buttonText: {
-    backgroundColor: `#fff`,
-    marginBottom: 5,
-    paddingVertical: 10,
-    paddingHorizontal: 10,
-  },
   text: {
-    color: '#000',
+    color: 'white',
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
   },
   textSmall: {
@@ -71,6 +69,40 @@ export const homeStyle = StyleSheet.create({
     resizeMode: 'contain',
     width: '100%',
     height: '100%',
+  },
+  homeView: {
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'flex-start',
+  },
+  cennterView: {
+    marginTop: windowHeight * 0.2,
+    flex: 0.6,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  buttonView: {
+    width: windowWidth * 0.8,
+    height: windowHeight * 0.1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'blue',
+    borderRadius: 10,
+  },
+  quitView: {
+    width: windowWidth * 0.6,
+    height: windowHeight * 0.1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'blue',
+    borderRadius: 10,
+  },
+  textButton: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+    textTransform: 'uppercase',
   },
   headerImg: {
     resizeMode: 'contain',
@@ -125,7 +157,7 @@ export const homeStyle = StyleSheet.create({
   },
   nameInput: {
     color: 'white',
-    paddingLeft: 50,
+    paddingLeft: windowWidth * 0.2,
   },
   dateNow: {
     color: 'white',
