@@ -93,12 +93,7 @@ function Payment() {
   ) : (
     <>
       {buys.map((buy, buyKey) => (
-        <Button
-          type="TURN"
-          key={buyKey}
-          item={buy}
-          onClick={handleRequestBuy}
-        />
+        <Button key={buyKey} item={buy} onClick={handleRequestBuy} />
       ))}
     </>
   );
