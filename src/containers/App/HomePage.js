@@ -130,7 +130,7 @@ function HomePage({ dispatch, turn }) {
 
 HomePage.propTypes = {
   dispatch: PropTypes.func,
-  turn: PropTypes.number,
+  turn: PropTypes.any,
 };
 
 const mapStateToProps = createStructuredSelector({

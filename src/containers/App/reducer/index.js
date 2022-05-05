@@ -10,7 +10,7 @@ import {
 } from '../constants';
 
 export const initialState = {
-  turn: 10,
+  turn: null,
   isShowShopping: false,
   backgroundType: 'default',
   isPlayState: false,
@@ -25,7 +25,6 @@ export default (state = initialState, action) =>
         break;
 
       case SET_TURN:
-        AsyncStorage.setItem('@turn', JSON.stringify(action.turn));
         draft.turn = action.turn;
         break;
 
